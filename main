@@ -1,0 +1,16 @@
+password = input("Enter your password: ")
+stars = 0
+
+# Check conditions
+if len(password) >= 8:
+    stars += 1
+if any(sym in "!@#$%^&*" for sym in password):
+    stars += 1
+if any(sym.isdigit() for sym in password):
+    stars += 1
+if any(sym.isupper() for sym in password):
+    stars += 1
+if any(sym.islower() for sym in password):
+    stars += 1
+
+print("Password strength:", "⭐" * stars)
